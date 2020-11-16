@@ -28,8 +28,11 @@ Vagrant.configure "2" do |config|
     manager.vm.provision "shell", inline: "mkdir -p /etc/systemd/system/docker.service.d", privileged: true
     manager.vm.provision "shell", inline: "cat /tmp/override.conf > /etc/systemd/system/docker.service.d/override.conf", privileged: true
     manager.vm.provision "shell", inline: "cat /tmp/daemon.json > /etc/docker/daemon.json", privileged: true
-    manager.vm.provision "shell", inline: "firewall-cmd --zone=public --add-port=2375/tcp", privileged: true
-    manager.vm.provision "shell", inline: "firewall-cmd --zone=public --add-port=2377/tcp", privileged: true
+    # turning off firewall for app deployment simplification
+    manager.vm.provision "shell", inline: "systemctl disable firewalld --now", privileged: true
+    # manager.vm.provision "shell", inline: "firewall-cmd --zone=public --add-port=2375/tcp --permanent", privileged: true
+    # manager.vm.provision "shell", inline: "firewall-cmd --zone=public --add-port=2377/tcp --permanent", privileged: true
+    # manager.vm.provision "shell", inline: "firewall-cmd --reload", privileged: true
     manager.vm.provision "shell", inline: "systemctl daemon-reload", privileged: true
     manager.vm.provision "shell", inline: "systemctl restart docker", privileged: true
   end
@@ -51,7 +54,10 @@ Vagrant.configure "2" do |config|
       worker.vm.provision "shell", inline: "mkdir -p /etc/systemd/system/docker.service.d", privileged: true
       worker.vm.provision "shell", inline: "cat /tmp/override.conf > /etc/systemd/system/docker.service.d/override.conf", privileged: true
       worker.vm.provision "shell", inline: "cat /tmp/daemon.json >> /etc/docker/daemon.json", privileged: true
-      worker.vm.provision "shell", inline: "firewall-cmd --zone=public --add-port=2375/tcp", privileged: true
+      # turning off firewall for app deployment simplification
+      worker.vm.provision "shell", inline: "systemctl disable firewalld --now", privileged: true
+      # worker.vm.provision "shell", inline: "firewall-cmd --zone=public --add-port=2375/tcp --permanent", privileged: true
+      # worker.vm.provision "shell", inline: "firewall-cmd --reload", privileged: true
       worker.vm.provision "shell", inline: "systemctl daemon-reload", privileged: true
       worker.vm.provision "shell", inline: "systemctl restart docker", privileged: true
     end
