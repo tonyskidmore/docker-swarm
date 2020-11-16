@@ -66,7 +66,7 @@ vagrant ssh docker-swarm-01
 [vagrant@docker-swarm-01 ~]$
 ````
 
-### Suspending and resuming the environment
+### Stopping and starting the environment
 
 When the test cluster is not being actively used, the nodes can be suspended and resumed at will.  This can be done by moving to the location of the vagrant file and issuing the `suspend` and `resume` commands:
 
@@ -78,6 +78,19 @@ vagrant suspend
 
 # resume our docker swarm nodes
 vagrant resume
+
+````
+
+Alternatively the VMs can be stopped and started:
+
+````powershell
+cd \vagrant\docker-swarm
+
+# shutdown our docker swarm nodes
+vagrant halt
+
+# start up docker swarm nodes
+vagrant up
 
 ````
 
