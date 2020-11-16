@@ -37,6 +37,6 @@ vagrant up
 
 ### Learning material
 
-[Swarm mode overview](https://docs.docker.com/engine/swarm/)
+[Swarm mode overview](https://docs.docker.com/engine/swarm/)  
 [Getting Started with Docker Swarm Mode](https://www.pluralsight.com/courses/docker-swarm-mode-getting-started) by Wes Higbee
 
