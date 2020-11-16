@@ -20,7 +20,7 @@ Tested versions of products (may work with different versions):
 ### Architecture layout
 ![Alt text](images/architecture.png "Architecture layout")
 
-In the above diagram we can see that after deployment we will have a Docker Swarm mode 3-node cluster with a single manager and 2 x worker nodes.  The design is as simple as possible to demonstrate some higher level concepts of working with Swarm and purposely avoids production level aspects such as TLS certificates and high availability.  All that we want for our purposes is a simple 3-node cluster.
+In the above diagram we can see that after deployment we will have a Docker Swarm mode 3-node cluster with a single manager and 2 x worker nodes.  The design is as simple as possible to demonstrate some higher level concepts of working with Swarm and purposely avoids production level aspects such as TLS certificates, security and high availability.  All that we want for our purposes is a simple 3-node cluster.
 
 ### Spinning up the environment
 
