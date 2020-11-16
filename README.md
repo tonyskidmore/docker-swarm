@@ -30,7 +30,7 @@ The following steps will bring up the Docker swarm mode cluster once you have al
 mkdir \vagrant
 cd \vagrant
 git clone https://github.com/tonyskidmore/docker-swarm.git
-cd vagrant
+cd docker-swarm
 vagrant up
 
 ````
