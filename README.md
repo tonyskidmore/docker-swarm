@@ -38,7 +38,7 @@ vagrant up
 
 ### Post-provisioning snapshots
 
-It can be useful to take snapshots of the cluster nodes post deployment as a quicker method to rolling back to a pristine state, rather than having to `vagrant destroy` and then `vagrant up`.  I generally prefer to take offline snapshots and to do this you could perform the following commands:  
+It can be useful to take snapshots of the cluster nodes pre-deployment of services as a quicker method to rolling back to a pristine state, rather than having to `vagrant destroy` and then `vagrant up`.  I generally prefer to take offline snapshots and to do this you could perform the following commands:  
 
 ````powershell
 
