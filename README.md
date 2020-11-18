@@ -36,6 +36,33 @@ vagrant up
 
 ````
 
+### Post-deployment snapshots
+
+It can be useful to take snapshots of the cluster nodes post deployment as a quicker method to rolling back to a pristine state, rather than having to `vagrant destroy` and then `vagrant up`.  I generally prefer to take offline snapshots and to do this you could perform the following commands:  
+
+````powershell
+
+cd \vagrant\docker-swarm
+
+# shutdown cluster nodes
+vagrant halt
+
+# snapshot all nodes
+1..3 | % { & vagrant snapshot save "docker-swarm-0$_" "pre-deployment" }
+
+# bring up cluster again
+vagrant up
+
+````
+To restore the snapshots perform that same actions above but replace the second step with:  
+
+````powershell
+
+# snapshot restore all nodes
+1..3 | % { & vagrant snapshot restore "docker-swarm-0$_" "pre-deployment" --no-start }
+
+````
+
 ### Accessing the environment from the Windows host
 
 Now that the environment has been deployed the Docker Swarm mode can be accessed from the Windows host system.  Run Windows PowerShell and enter the following commands:
