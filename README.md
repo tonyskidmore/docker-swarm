@@ -1,7 +1,9 @@
 Vagrant Docker Swarm
 ====================
 
-Although [Kubernetes](https://kubernetes.io/) has become the _de facto standard_ for container orchestration we still find environments that use [Docker Swarm mode](https://docs.docker.com/engine/swarm/).  This repo provides the configuration to spin up a Docker Swarm mode cluster using [Vagrant](https://www.vagrantup.com/).
+Although [Kubernetes](https://kubernetes.io/) has become the _de facto standard_ for container orchestration we still find environments that use [Docker Swarm mode](https://docs.docker.com/engine/swarm/).  This repo provides the configuration to spin up a Docker Swarm mode cluster using [Vagrant](https://www.vagrantup.com/).  
+
+This repository was created for the purpose of being a platform for [tonyskidmore/docker-swarm-monitoring](https://github.com/tonyskidmore/docker-swarm-monitoring).
 
 ### Testing environment
 
